@@ -12,6 +12,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const path_1 = __importDefault(require("path"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const bot_1 = require("./bot");
@@ -19,6 +21,18 @@ const wallets_1 = require("./ton-connect/wallets");
 const sdk_1 = __importDefault(require("@tonconnect/sdk"));
 const storage_1 = require("./ton-connect/storage");
 const qrcode_1 = __importDefault(require("qrcode"));
+const app = (0, express_1.default)();
+// 设置静态文件目录为 'public'
+app.use(express_1.default.static(path_1.default.join(__dirname, 'public')));
+// 启动Express服务器
+const port = process.env.PORT || 80;
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+});
+bot_1.bot.on('message', msg => {
+    const chatId = msg.chat.id;
+    bot_1.bot.sendMessage(chatId, 'Received your message');
+});
 bot_1.bot.onText(/\/connect/, (msg) => __awaiter(void 0, void 0, void 0, function* () {
     const chatId = msg.chat.id;
     const wallets = yield (0, wallets_1.getWallets)();

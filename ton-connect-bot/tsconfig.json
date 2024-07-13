@@ -32,5 +32,6 @@
   },
   "include": ["src"],
   "exclude": [
-    "./tests","node_modules", "lib", "types"]
+    "./tests","node_modules", "lib", "types"
+  ]
 }
