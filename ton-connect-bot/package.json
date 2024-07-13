@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "compile": "npx rimraf dist && tsc",
-    "copy-public": "copyfiles -u 1 public/**/* dist",
+    "copy-public": "copyfiles -u 1 public/**/* dist/public",
     "build": "npm run compile && npm run copy-public",
     "start": "node ./dist/main.js"
   },
