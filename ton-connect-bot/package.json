@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "compile": "rm -rf dist && tsc",
-    "copy-public": "copyfiles -u 1 public/**/* dist/public",
+    "copy-public": "cp -r public/* dist/public",
     "build": "npm run compile && npm run copy-public",
     "start": "node ./dist/main.js"
   },
