@@ -2,8 +2,8 @@
   "name": "ton-connect-bot",
   "version": "1.0.0",
   "scripts": {
-    "compile": "npx rimraf dist && tsc",
-    "copy-public": "npx copyfiles -u 1 public/**/* dist/public",
+    "compile": "tsc",
+    "copy-public": "node scripts/copyPublic.js",
     "build": "npm run compile && npm run copy-public",
     "start": "node ./dist/main.js"
   },
