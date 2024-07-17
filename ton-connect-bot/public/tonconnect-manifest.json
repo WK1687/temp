@@ -1,7 +1,7 @@
 {
-  "url": "<app-url>",
+  "url": "https://temp-i4i8.onrender.com/hello.html",
   "name": "Sprout",
-  "iconUrl": "<app-icon-url>",
-  "termsOfUseUrl": "<terms-of-use-url>",
-  "privacyPolicyUrl": "<privacy-policy-url>"
+  "iconUrl": "https://temp-i4i8.onrender.com/app.ico",
+  "termsOfUseUrl": "https://temp-i4i8.onrender.com/tk.html",
+  "privacyPolicyUrl": "https://temp-i4i8.onrender.com/tk.html"
 }
